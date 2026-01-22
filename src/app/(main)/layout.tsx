@@ -14,7 +14,7 @@ export default function MainLayout({
   return (
     <QueryProvider>
       <AuthProvider>
-        <div className="min-h-screen flex flex-col bg-background">
+        <div className="min-h-screen flex flex-col bg-background w-full overflow-x-hidden">
           <Navbar />
           {children}
         </div>

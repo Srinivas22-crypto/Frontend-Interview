@@ -42,7 +42,7 @@ const pastEvents = [
 
 function EventCard({ event, isPast = false }: { event: typeof upcomingEvents[0]; isPast?: boolean }) {
   return (
-    <Card className={`group transition-all duration-200 ease-in-out ${isPast ? 'opacity-70' : 'hover:shadow-md hover:bg-muted/40'}`}>
+    <Card className={`group flex flex-col h-full transition-all duration-200 ease-in-out ${isPast ? 'opacity-70' : 'hover:shadow-md hover:bg-muted/40'}`}>
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <CardTitle className="text-lg">{event.title}</CardTitle>
@@ -60,15 +60,17 @@ function EventCard({ event, isPast = false }: { event: typeof upcomingEvents[0];
           {event.date}
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex flex-col flex-1">
         <p className="text-sm text-muted-foreground mb-4">{event.description}</p>
-        <Button 
-          disabled={isPast} 
-          variant={isPast ? 'outline' : 'default'} 
-          className={`w-full transition-all duration-200 ease-in-out ${!isPast ? 'hover:scale-[1.02]' : ''}`}
-        >
-          {isPast ? 'Event Ended' : 'Register'}
-        </Button>
+        <div className="mt-auto">
+          <Button
+            disabled={isPast}
+            variant={isPast ? 'outline' : 'default'}
+            className={`w-full transition-all duration-200 ease-in-out ${!isPast ? 'hover:scale-[1.02]' : ''}`}
+          >
+            {isPast ? 'Event Ended' : 'Register'}
+          </Button>
+        </div>
       </CardContent>
     </Card>
   )

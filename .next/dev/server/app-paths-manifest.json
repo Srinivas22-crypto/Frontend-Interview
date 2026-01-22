@@ -1,8 +1,0 @@
-{
-  "/(main)/job-board/page": "app/(main)/job-board/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/blogs/[id]/like/route": "app/api/blogs/[id]/like/route.js",
-  "/api/blogs/[id]/route": "app/api/blogs/[id]/route.js",
-  "/api/blogs/route": "app/api/blogs/route.js",
-  "/page": "app/page.js"
-}

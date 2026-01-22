@@ -27,16 +27,16 @@ export function Home() {
   }, [])
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-background">
+    <div className="min-h-screen lg:h-screen flex flex-col lg:overflow-hidden bg-background">
       {/* Navbar */}
       <Navbar />
 
       {/* Main Content - Fills remaining height */}
-      <main className="flex-1 overflow-hidden">
-        <div className="container mx-auto px-4 py-6 h-full">
-          <div className="flex flex-col lg:flex-row gap-6 h-full">
+      <main className="flex-1 lg:overflow-hidden">
+        <div className="container mx-auto px-4 py-6 lg:h-full">
+          <div className="flex flex-col lg:flex-row gap-6 lg:h-full">
             {/* Left Panel - Blog List (30% on desktop) */}
-            <aside className="lg:w-[30%] lg:min-w-[320px] lg:max-w-[400px] flex flex-col h-full overflow-hidden">
+            <aside className="w-full lg:w-[30%] lg:min-w-[320px] lg:max-w-[400px] flex flex-col lg:h-full lg:overflow-hidden">
               {/* Create Button */}
               {isAuthenticated && (
                 <div className="mb-4 shrink-0">
@@ -61,8 +61,8 @@ export function Home() {
                 </div>
               )}
 
-              {/* Blog List with independent scroll */}
-              <div className="flex-1 overflow-y-auto pr-2">
+              {/* Blog List with independent scroll on desktop */}
+              <div className="lg:flex-1 lg:overflow-y-auto pr-2">
                 <BlogList
                   activeBlogId={activeBlogId}
                   onSelectBlog={handleSelectBlog}
@@ -71,10 +71,10 @@ export function Home() {
             </aside>
 
             {/* Right Panel - Blog Detail (70% on desktop) */}
-            <section className="flex-1 overflow-y-auto pl-0 lg:pl-2" aria-label="Blog content">
+            <section className="flex-1 lg:overflow-y-auto pl-0 lg:pl-2" aria-label="Blog content">
               <div className="bg-card rounded-lg border p-6">
-                <BlogDetail 
-                  blogId={activeBlogId} 
+                <BlogDetail
+                  blogId={activeBlogId}
                   onBlogDeleted={handleBlogDeleted}
                 />
               </div>
